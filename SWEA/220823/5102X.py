@@ -4,7 +4,6 @@ sys.stdin = open('input.txt')
 def dfs(nodes, start, end, n):    # 시작과 끝이 정해진 dfs
     for i in range(1, len(nodes)):
         if nodes[i] not in nodes[0] and nodes[i][0] == start:
-            print(nodes[i])
             if nodes[i][1]==end:             # 끝났니
                 global VAL         # 사실 매개변수 자리로 보내도 됨
                 if VAL != 0:
@@ -12,10 +11,11 @@ def dfs(nodes, start, end, n):    # 시작과 끝이 정해진 dfs
                 else:
                     VAL = n+1
             else:
-                temp = nodes[:]
-                temp[0].append((start, nodes[i][1]))
-                temp[0].append((nodes[i][1], start))
-                dfs(temp, nodes[i][1], end, n+1) # 안끝났으면 시작지점을 여기부터
+                nodes[0].append((start, nodes[i][1]))
+                nodes[0].append((nodes[i][1], start))
+                dfs(nodes, nodes[i][1], end, n+1) # 안끝났으면 시작지점을 여기부터
+                nodes[0].remove((start, nodes[i][1]))
+                nodes[0].remove((nodes[i][1], start))
 T = int(input())
 VAL = 0
 for tc in range(1, T+1):
