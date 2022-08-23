@@ -10,8 +10,7 @@ def lcm(a, b):
     return a*b//gcd(a, b)
 def dfs(s, e):
     for i in range(s):
-        if s[i]
-
+        
 RST = 0
 T = int(input())
 for tc in range(1, T+1):
@@ -32,4 +31,4 @@ for tc in range(1, T+1):
             end_idx.append(b)
     if start_idx + end_idx == False:
         print(f'-1')
-    dfs(start_idx, end_idx)
+    dfs(A, B)
