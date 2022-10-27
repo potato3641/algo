@@ -1,13 +1,5 @@
-3
-11 6 9
-2
-5 3
-2 10
-123456789 123 460
-3
-10 19
-26 3
-3 19
-123456789 123 460
-1
-41 20
+import sys, os, io, atexit
+input = lambda: sys.stdin.readline().rstrip('\r\n')
+stdout = io.BytesIO()
+sys.stdout.write = lambda s: stdout.write(s.encode("ascii"))
+atexit.register(lambda: os.write(1, stdout.getvalue()))
