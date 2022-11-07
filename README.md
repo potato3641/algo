@@ -1,2 +1,2 @@
 # MY ALGORITHM STUDY LOG
- - since August, I learned algorithm every day
+ - 22년 7월부터 BOJ, SWEA 푼 코드 보관용 레포
